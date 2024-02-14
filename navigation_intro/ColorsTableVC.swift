@@ -10,6 +10,7 @@ import UIKit
 class ColorsTableVC: UIViewController {
     
     var colors: [UIColor] = []
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ extension ColorsTableVC: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.colorCell) else {
             return UITableViewCell()
         }
+        cell.textLabel?.text = colors[indexPath.row].accessibilityName.capitalized
         cell.backgroundColor = colors[indexPath.row]
     
         return cell
@@ -55,5 +57,17 @@ extension ColorsTableVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: Segues.toDetail, sender: colors[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return UISwipeActionsConfiguration(actions: [deleteItem(forRowAt: indexPath)])
+    }
+    
+    func deleteItem(forRowAt indexPath: IndexPath) -> UIContextualAction {
+        return UIContextualAction(style: .destructive, title: "Delete") { action, swipeButtonView, complation in
+            complation(true)
+            self.colors.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
     }
 }

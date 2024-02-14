@@ -16,15 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-8Z-9DG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-8Z-9DG">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="828"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCell" editingAccessoryType="detailButton" rowHeight="120" id="xz8-zt-yvk">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCell" rowHeight="80" id="o3j-FC-5tw">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xz8-zt-yvk" id="qF5-tH-vW3">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o3j-FC-5tw" id="ZPM-3p-X44">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -46,6 +46,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Colors" id="sWZ-yz-0VI"/>
                     <connections>
+                        <outlet property="tableView" destination="gMt-8Z-9DG" id="QN1-cb-hxc"/>
                         <segue destination="fK6-q7-Nog" kind="show" identifier="ToColorsDetailVC" destinationCreationSelector="navigateColorsDetail:sender:" id="641-Iz-37x"/>
                     </connections>
                 </viewController>
